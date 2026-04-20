@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-body: var(--font-noto), 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: #FAF6EF;
+  color: #2A2721;
+}
+
+body {
+  font-family: var(--font-body);
+  font-feature-settings: 'palt';
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* 伊薩眼睛眨眼動畫 — 開＋閉兩層疊加切換 */
+.isa-eye-open {
+  animation: isa-blink 5.2s ease-in-out infinite;
+}
+.isa-eye-close {
+  opacity: 0;
+  animation: isa-blink-inv 5.2s ease-in-out infinite;
+}
+@keyframes isa-blink {
+  0%, 91%, 100% { opacity: 1; }
+  93%, 96% { opacity: 0; }
+}
+@keyframes isa-blink-inv {
+  0%, 91%, 100% { opacity: 0; }
+  93%, 96% { opacity: 1; }
+}
+
+/* 耳朵偶爾抖一下（左右錯開時間） */
+.isa-ear-flick-l {
+  animation: isa-ear 7.4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.isa-ear-flick-r {
+  animation: isa-ear 8.8s ease-in-out infinite;
+  animation-delay: 2.1s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes isa-ear {
+  0%, 28%, 36%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-14deg); }
+  33% { transform: rotate(-4deg); }
+}
+
+/* hover 時的舌頭彈出 */
+.isa-tongue-pop {
+  animation: isa-tongue 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: 50px 60px;
+  transform-box: view-box;
+}
+@keyframes isa-tongue {
+  0% { transform: scale(0) translateY(-2px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* 地圖虛線自己畫出來的感覺 */
+.map-path-draw {
+  stroke-dasharray: 6 5;
+  animation: map-draw 1.6s ease-out both;
+}
+@keyframes map-draw {
+  0% { stroke-dashoffset: 400; opacity: 0; }
+  30% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* 地圖點位登場 */
+.map-dot-pop {
+  animation: map-dot 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes map-dot {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 點擊伊薩飛出的小心心 */
+.heart-float {
+  animation: heart-up 1.2s ease-out both;
+}
+@keyframes heart-up {
+  0% { transform: translateY(0) scale(0.3); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-70px) scale(1); opacity: 0; }
+}
+
+/* 探檢進度條的波浪動畫 */
+.walk-progress {
+  position: relative;
+  overflow: hidden;
+}
+.walk-progress::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: walk-shimmer 2.4s linear infinite;
+}
+@keyframes walk-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 印章蓋上去的感覺 */
+.stamp-pop {
+  animation: stamp-press 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes stamp-press {
+  0% { transform: scale(0) rotate(-25deg); opacity: 0; }
+  60% { transform: scale(1.2) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-8deg); opacity: 1; }
+}
+
+/* 卡片依序 fade in 用 */
+.fade-in-up {
+  animation: fade-up 0.6s ease-out both;
+}
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 飄浮的肉球裝飾 */
+.paw-drift {
+  animation: paw-drift 6s ease-in-out infinite;
+}
+@keyframes paw-drift {
+  0%, 100% { transform: translateY(0) rotate(var(--paw-rot, -15deg)); }
+  50% { transform: translateY(-10px) rotate(calc(var(--paw-rot, -15deg) + 8deg)); }
+}
+
+/* 手機優先：按鈕與重點字體加粗 */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
