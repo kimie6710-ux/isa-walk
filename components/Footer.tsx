@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="flex items-start gap-4">
           <IsaIcon className="h-12 w-12 shrink-0" />
           <div className="flex-1">
-            <div className="font-kai text-lg font-semibold text-ink-900 sm:text-xl">
-              伊薩帶路
+            <div className="font-kai text-lg font-bold tracking-wide text-ink-900 sm:text-xl">
+              ISA Walk
             </div>
             <p className="mt-1 text-sm leading-relaxed text-ink-600">
               先喜歡生活，再遇見適合的家。跟著伊薩散步，認識關渡的日常。
