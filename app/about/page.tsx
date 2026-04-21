@@ -78,11 +78,11 @@ export default function AboutPage() {
                 <span className="font-kai text-lg font-semibold text-ink-900">
                   伊薩
                 </span>
-                是一隻奶茶色毛、戴藍綠色項圈的狗狗，是台灣在地的米克斯
+                是一隻奶茶色毛、戴藍綠色項圈的男孩子，是台灣在地的米克斯
                 （不是柴犬，雖然常被認錯）。
               </p>
               <p>
-                她小時候毛很軟、耳朵還沒立起來，現在則是關渡一帶的帶路專家——
+                他小時候毛很軟、耳朵還沒立起來，現在則是關渡一帶的帶路專家——
                 熟知哪間咖啡店老闆會偷偷塞肉乾、哪條河堤傍晚風最舒服、
                 哪個公園的朋友最多。
               </p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
         {/* 伊薩的日常 */}
         <section className="mt-12 fade-in-up">
           <h3 className="font-kai text-2xl font-bold text-ink-900 sm:text-3xl">
-            她喜歡這些地方
+            他喜歡這些地方
           </h3>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
             {[
