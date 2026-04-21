@@ -11,7 +11,7 @@ const noto = Noto_Sans_TC({
   display: 'swap',
 });
 
-const siteUrl = 'https://isa-walk.vercel.app';
+const siteUrl = 'https://isa-walk-8sn4.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
