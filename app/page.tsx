@@ -43,7 +43,7 @@ export default function HomePage() {
         }
       />
 
-      <div className="relative mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 py-12 text-center sm:max-w-xl">
+      <div className="relative mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 py-12 text-center font-kai sm:max-w-xl">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-1.5 text-sm font-medium text-ink-600 shadow-soft animate-fade-in">
           <span className="inline-block h-2 w-2 rounded-full bg-sage-500" />
           ISA Walk · 關渡生活探索

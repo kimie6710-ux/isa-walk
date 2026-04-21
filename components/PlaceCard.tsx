@@ -78,9 +78,20 @@ export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
             {place.name}
           </h4>
 
+          {place.address && (
+            <div className="mt-0.5 text-sm text-ink-400">{place.address}</div>
+          )}
+
           <p className="mt-2 text-base leading-relaxed text-ink-600">
             {place.description}
           </p>
+
+          {place.notable && (
+            <p className="mt-1.5 text-sm text-ink-400">
+              <span className="font-medium">特色：</span>
+              {place.notable}
+            </p>
+          )}
 
           {place.isaQuote && (
             <div className="mt-3 flex items-start gap-2 rounded-xl bg-isa-100 px-3 py-2.5">
@@ -89,6 +100,21 @@ export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
                 「{place.isaQuote}」
               </p>
             </div>
+          )}
+
+          {place.googleMapsUrl && (
+            <a
+              href={place.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-skysoft-100 px-3 py-1.5 text-xs font-semibold text-skysoft-700 transition-all hover:-translate-y-0.5 hover:bg-skysoft-300/60"
+            >
+              <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M10 2 C 6 2 3 5 3 9 C 3 14 10 18 10 18 C 10 18 17 14 17 9 C 17 5 14 2 10 2 Z" />
+                <circle cx="10" cy="9" r="2.5" />
+              </svg>
+              在 Google 地圖開啟
+            </a>
           )}
         </div>
       </div>
