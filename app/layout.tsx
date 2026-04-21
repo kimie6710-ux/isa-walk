@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/Footer';
+import TopNav from '@/components/TopNav';
 
 const noto = Noto_Sans_TC({
   subsets: ['latin'],
@@ -10,10 +11,29 @@ const noto = Noto_Sans_TC({
   display: 'swap',
 });
 
+const siteUrl = 'https://isa-walk.vercel.app';
+
 export const metadata: Metadata = {
-  title: '伊薩帶路｜ISA Walk — 關渡生活探索',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: '伊薩帶路｜ISA Walk — 關渡生活探索',
+    template: '%s｜ISA Walk',
+  },
   description:
     '跟著伊薩散步，先喜歡生活，再遇見適合的家。關渡生活探索，由全國不動產 關渡加盟店提供房源。',
+  openGraph: {
+    title: '伊薩帶路｜ISA Walk',
+    description: '跟著伊薩散步，先喜歡生活，再遇見適合的家。',
+    url: siteUrl,
+    siteName: 'ISA Walk',
+    locale: 'zh_TW',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '伊薩帶路｜ISA Walk',
+    description: '跟著伊薩散步，先喜歡生活，再遇見適合的家。',
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +56,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-cream-50 font-sans text-ink-700 antialiased">
-        {children}
+        <a href="#main" className="skip-link">
+          跳至主要內容
+        </a>
+        <TopNav />
+        <div id="main">{children}</div>
         <Footer />
       </body>
     </html>

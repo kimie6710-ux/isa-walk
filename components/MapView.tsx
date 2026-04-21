@@ -1,12 +1,14 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import type { Place, Accent } from '@/data/places';
 import { KindIcon } from './PlaceIcons';
 
 type Props = {
   places: Place[];
   accent: Accent;
+  selectedId: string | null;
+  onSelect: (id: string | null) => void;
 };
 
 const accentHex: Record<Accent, string> = {
@@ -21,8 +23,9 @@ const VB_W = 400;
 const VB_H = 280;
 const PAD = 40;
 
-export default function MapView({ places, accent }: Props) {
-  const [selected, setSelected] = useState<string | null>(null);
+export default function MapView({ places, accent, selectedId, onSelect }: Props) {
+  const selected = selectedId;
+  const setSelected = onSelect;
 
   const points = useMemo(() => {
     if (places.length === 0) return [];

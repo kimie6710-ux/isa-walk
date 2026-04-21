@@ -1,13 +1,18 @@
 'use client';
 
-import type { Place } from '@/data/places';
+import type { Place, Accent } from '@/data/places';
 import { IsaIcon } from './IsaIllustration';
 import { KindIcon, WalkIcon, ClockIcon } from './PlaceIcons';
+import StampButton from './StampButton';
 
 type Props = {
   place: Place;
   step: number;
   total: number;
+  accent: Accent;
+  collected: boolean;
+  onToggleStamp: () => void;
+  selected?: boolean;
   delayMs?: number;
 };
 
@@ -31,13 +36,25 @@ function formatMin(min?: number) {
   return `${min} 分鐘`;
 }
 
-export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
+export default function PlaceCard({
+  place,
+  step,
+  total,
+  accent,
+  collected,
+  onToggleStamp,
+  selected = false,
+  delayMs = 0,
+}: Props) {
   const stay = formatMin(place.stayMin);
   const walk = formatMin(place.walkFromMin);
 
   return (
     <div
-      className="relative fade-in-up"
+      id={`place-${place.id}`}
+      className={`relative scroll-mt-24 fade-in-up transition-all duration-300 ${
+        selected ? 'ring-2 ring-isa-400 rounded-3xl shadow-float -translate-y-0.5' : ''
+      }`}
       style={{ animationDelay: `${delayMs}ms` }}
     >
       {step < total && (
@@ -55,9 +72,11 @@ export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
       )}
 
       <div className="relative z-10 flex items-start gap-4">
-        <div className="flex h-[68px] w-[68px] shrink-0 flex-col items-center justify-center rounded-2xl bg-white p-2 shadow-soft">
+        <div className={`flex h-[68px] w-[68px] shrink-0 flex-col items-center justify-center rounded-2xl p-2 shadow-soft transition-colors ${
+          collected ? 'bg-isa-200' : 'bg-white'
+        }`}>
           <KindIcon kind={place.kind} className="h-9 w-9" />
-          <span className="text-[10px] font-bold text-ink-400">
+          <span className="text-[10px] font-bold text-ink-600">
             {step}/{total}
           </span>
         </div>
@@ -79,16 +98,16 @@ export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
           </h4>
 
           {place.address && (
-            <div className="mt-0.5 text-sm text-ink-400">{place.address}</div>
+            <div className="mt-0.5 text-sm text-ink-600">{place.address}</div>
           )}
 
-          <p className="mt-2 text-base leading-relaxed text-ink-600">
+          <p className="mt-2 text-base leading-relaxed text-ink-700">
             {place.description}
           </p>
 
           {place.notable && (
-            <p className="mt-1.5 text-sm text-ink-400">
-              <span className="font-medium">特色：</span>
+            <p className="mt-1.5 text-sm text-ink-600">
+              <span className="font-semibold">特色：</span>
               {place.notable}
             </p>
           )}
@@ -102,20 +121,27 @@ export default function PlaceCard({ place, step, total, delayMs = 0 }: Props) {
             </div>
           )}
 
-          {place.googleMapsUrl && (
-            <a
-              href={place.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-skysoft-100 px-3 py-1.5 text-xs font-semibold text-skysoft-700 transition-all hover:-translate-y-0.5 hover:bg-skysoft-300/60"
-            >
-              <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M10 2 C 6 2 3 5 3 9 C 3 14 10 18 10 18 C 10 18 17 14 17 9 C 17 5 14 2 10 2 Z" />
-                <circle cx="10" cy="9" r="2.5" />
-              </svg>
-              在 Google 地圖開啟
-            </a>
-          )}
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <StampButton
+              collected={collected}
+              onClick={onToggleStamp}
+              accent={accent}
+            />
+            {place.googleMapsUrl && (
+              <a
+                href={place.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-skysoft-100 px-3 py-1.5 text-xs font-semibold text-skysoft-700 transition-all hover:-translate-y-0.5 hover:bg-skysoft-300/60"
+              >
+                <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M10 2 C 6 2 3 5 3 9 C 3 14 10 18 10 18 C 10 18 17 14 17 9 C 17 5 14 2 10 2 Z" />
+                  <circle cx="10" cy="9" r="2.5" />
+                </svg>
+                Google 地圖
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

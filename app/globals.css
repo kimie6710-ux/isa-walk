@@ -162,3 +162,34 @@ body {
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* 完歩時の肉球爆発 */
+@keyframes paw-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(90deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(0.6) rotate(360deg);
+  }
+}
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #2A2721;
+  color: #FAF6EF;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}

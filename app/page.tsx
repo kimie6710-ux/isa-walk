@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import DogCharacter from '@/components/DogCharacter';
 import { PawPrint } from '@/components/IsaIllustration';
+import TimeRecommend from '@/components/TimeRecommend';
 
 export default function HomePage() {
   return (
@@ -86,6 +87,8 @@ export default function HomePage() {
           <PawPrint className="h-5 w-5 text-cream-50" />
           <span>開始散步</span>
         </Link>
+
+        <TimeRecommend />
 
         <Link
           href="/about"
