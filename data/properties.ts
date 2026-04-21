@@ -14,8 +14,8 @@ export type Property = {
 };
 
 // 資料來源：全國不動產 關渡加盟店 https://www.nra.com.tw/ab135/
+// 實際門市位於淡水新市鎮自強路 96 號，多數房源位於淡水自強路/民族路/民權路/自立路一帶
 // 電話：02-2809-8093
-// 地址：新北市淡水區自強路 96 號
 export const properties: Property[] = [
   {
     id: 'p1',
@@ -27,8 +27,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '小資族的首購心頭好，電梯大樓含車位，近市場與學區。兩房格局方正、採光明亮，一個人或小家庭都剛好。',
-    lat: 25.1218,
-    lng: 121.4682,
+    lat: 25.1745,
+    lng: 121.4355,
   },
   {
     id: 'p2',
@@ -40,8 +40,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '高樓層面河大宅，客廳開放式設計與五房格局，適合三代同堂或愛招待朋友的主人。含 VIP 影音導覽。',
-    lat: 25.1205,
-    lng: 121.4665,
+    lat: 25.1720,
+    lng: 121.4335,
   },
   {
     id: 'p3',
@@ -54,8 +54,8 @@ export const properties: Property[] = [
     district: '淡水區 · 民族路',
     description:
       '四房格局完整，主臥含獨立衛浴與更衣室，廚房與餐廳打通。近公園與親子設施，一家人的生活在這裡慢慢長大。',
-    lat: 25.1230,
-    lng: 121.4710,
+    lat: 25.1785,
+    lng: 121.4455,
   },
   {
     id: 'p4',
@@ -68,8 +68,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '近河堤、貴子坑公園，社區歡迎毛小孩一起生活。兩房格局方正，陽台通風，適合喜歡帶狗散步的人。',
-    lat: 25.1215,
-    lng: 121.4685,
+    lat: 25.1738,
+    lng: 121.4348,
   },
   {
     id: 'p5',
@@ -81,8 +81,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自立路',
     description:
       '高樓層景觀四房，窗景開闊可見河景與觀音山。適合重視視野與採光的一家人。',
-    lat: 25.1222,
-    lng: 121.4695,
+    lat: 25.1755,
+    lng: 121.4375,
   },
   {
     id: 'p6',
@@ -95,8 +95,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '正面河景的景觀豪邸，落地窗看得見夕陽與飛鳥。73 坪大器格局，是重視生活品質的首選。',
-    lat: 25.1200,
-    lng: 121.4660,
+    lat: 25.1715,
+    lng: 121.4325,
   },
   {
     id: 'p7',
@@ -108,8 +108,8 @@ export const properties: Property[] = [
     district: '淡水區 · 民權路',
     description:
       '社區規劃中庭綠園道，兩房格局適合文青生活。附近有獨立書店與咖啡館，日子過得很慢、很剛好。',
-    lat: 25.1235,
-    lng: 121.4705,
+    lat: 25.1763,
+    lng: 121.4402,
   },
   {
     id: 'p8',
@@ -122,8 +122,8 @@ export const properties: Property[] = [
     district: '北投區 · 大度路',
     description:
       '三房公寓採光好，近傳統市場與學區。社區安靜，是一家人在關渡落腳的剛好尺寸。',
-    lat: 25.1258,
-    lng: 121.4685,
+    lat: 25.1252,
+    lng: 121.4680,
   },
   {
     id: 'p9',
@@ -135,9 +135,9 @@ export const properties: Property[] = [
     sizePing: 48.17,
     district: '淡水區 · 自強路',
     description:
-      '48 坪三房華廈，格局方正，步行到關渡捷運站僅 8 分鐘。通勤族與小家庭都合適。',
-    lat: 25.1240,
-    lng: 121.4688,
+      '48 坪三房華廈，格局方正，步行到關渡捷運站約 15 分鐘、淡水新市鎮車程約 10 分。通勤族與小家庭都合適。',
+    lat: 25.1742,
+    lng: 121.4360,
   },
   {
     id: 'p10',
@@ -149,8 +149,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '藝術感社區規劃，中庭花園四季有花。三房格局含平面車位。附近有畫廊、咖啡與獨立書店。',
-    lat: 25.1210,
-    lng: 121.4670,
+    lat: 25.1730,
+    lng: 121.4370,
   },
   {
     id: 'p11',
@@ -162,8 +162,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自立路',
     description:
       '高樓兩房景觀宅，窗外是關渡平原與夕陽。適合重視景觀又不想要太大空間的單身族或兩人生活。',
-    lat: 25.1225,
-    lng: 121.4692,
+    lat: 25.1750,
+    lng: 121.4378,
   },
   {
     id: 'p12',
@@ -175,8 +175,8 @@ export const properties: Property[] = [
     district: '淡水區 · 自強路',
     description:
       '書院風格的三房美宅，52 坪格局含大書房。安靜、有氣質，適合寫作、閱讀、過一種有節奏的生活。',
-    lat: 25.1212,
-    lng: 121.4678,
+    lat: 25.1735,
+    lng: 121.4392,
   },
 ];
 
