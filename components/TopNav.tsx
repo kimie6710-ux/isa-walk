@@ -12,32 +12,35 @@ export default function TopNav() {
     p === '/select' ? path.startsWith('/select') || path.startsWith('/route') : path === p;
 
   return (
-    <nav className="sticky top-0 z-40 border-b border-cream-200 bg-cream-50/85 backdrop-blur">
-      <div className="mx-auto flex max-w-2xl items-center justify-between px-5 py-3 sm:max-w-3xl">
+    <nav className="sticky top-0 z-40 border-b border-cream-200 bg-cream-50/90 backdrop-blur">
+      <div
+        className="mx-auto flex max-w-2xl items-center justify-between px-5 py-2.5 sm:max-w-3xl"
+        style={{ paddingTop: 'max(0.625rem, env(safe-area-inset-top))' }}
+      >
         <Link
           href="/"
-          className="flex items-center gap-2 font-kai text-base font-bold text-ink-900 transition-opacity hover:opacity-80"
+          className="flex min-h-[44px] items-center gap-2 font-kai text-base font-bold text-ink-900 transition-opacity hover:opacity-80 sm:text-lg"
         >
-          <IsaIcon className="h-8 w-8" />
+          <IsaIcon className="h-9 w-9" />
           ISA Walk
         </Link>
-        <div className="flex items-center gap-1 text-sm font-medium sm:gap-2 sm:text-base">
+        <div className="flex items-center gap-1.5 text-sm font-semibold sm:gap-2 sm:text-base">
           <Link
             href="/select"
-            className={`rounded-full px-3 py-1.5 transition-colors ${
+            className={`flex min-h-[44px] items-center rounded-full px-4 py-2 transition-colors ${
               isActive('/select')
                 ? 'bg-ink-900 text-cream-50'
-                : 'text-ink-600 hover:bg-cream-100 hover:text-ink-900'
+                : 'text-ink-700 hover:bg-cream-100 hover:text-ink-900'
             }`}
           >
             路線
           </Link>
           <Link
             href="/about"
-            className={`rounded-full px-3 py-1.5 transition-colors ${
+            className={`flex min-h-[44px] items-center rounded-full px-4 py-2 transition-colors ${
               isActive('/about')
                 ? 'bg-ink-900 text-cream-50'
-                : 'text-ink-600 hover:bg-cream-100 hover:text-ink-900'
+                : 'text-ink-700 hover:bg-cream-100 hover:text-ink-900'
             }`}
           >
             關於

@@ -154,9 +154,9 @@ export default function MapView({ places, accent, selectedId, onSelect }: Props)
         })}
       </svg>
 
-      <div className="mt-2 flex items-center justify-between px-2 text-xs font-medium sm:text-sm">
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1.5 text-ink-400">
+      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 px-2 text-sm font-medium">
+        <div className="flex items-center gap-4">
+          <span className="flex items-center gap-1.5 text-ink-600">
             <span
               className="inline-block h-3 w-3 rounded-full"
               style={{ background: '#8A8275' }}
@@ -171,7 +171,7 @@ export default function MapView({ places, accent, selectedId, onSelect }: Props)
             房源
           </span>
         </div>
-        <div className="text-ink-400">點圓點看詳情</div>
+        <div className="text-ink-600">點圓點看詳情</div>
       </div>
 
       {selectedPlace && (
@@ -190,7 +190,7 @@ export default function MapView({ places, accent, selectedId, onSelect }: Props)
           </div>
           <button
             onClick={() => setSelected(null)}
-            className="shrink-0 rounded-full bg-cream-100 px-3 py-1 text-xs font-medium text-ink-600 hover:bg-cream-200"
+            className="min-h-[40px] shrink-0 rounded-full bg-cream-100 px-4 py-2 text-sm font-semibold text-ink-700 hover:bg-cream-200 active:scale-95"
             aria-label="關閉"
           >
             關閉

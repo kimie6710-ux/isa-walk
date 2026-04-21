@@ -63,10 +63,10 @@ export default function PropertyCard({
     >
       <div className="relative z-10 flex items-start gap-4">
         <div
-          className={`flex h-[68px] w-[68px] shrink-0 flex-col items-center justify-center rounded-2xl ${a.glow} shadow-soft`}
+          className={`flex h-[72px] w-[72px] shrink-0 flex-col items-center justify-center rounded-2xl ${a.glow} shadow-soft`}
         >
-          <IsaIcon className="h-8 w-8" />
-          <span className="text-[10px] font-bold text-ink-700">
+          <IsaIcon className="h-9 w-9" />
+          <span className="text-xs font-bold text-ink-700">
             {step}/{total}
           </span>
         </div>

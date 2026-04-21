@@ -73,7 +73,7 @@ export default function Footer() {
           </Link>
         </nav>
 
-        <div className="mt-6 text-xs text-ink-400">
+        <div className="mt-6 text-sm text-ink-600 safe-bottom">
           © 2026 ISA Walk · 房源資料僅供參考，實際以全國不動產官方資訊為準
         </div>
       </div>

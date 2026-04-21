@@ -10,7 +10,7 @@ export default function SelectPage() {
         <div className="mb-2 animate-fade-in">
           <Link
             href="/"
-            className="text-base font-medium text-ink-400 transition-colors hover:text-ink-700"
+            className="inline-flex min-h-[40px] items-center text-base font-medium text-ink-600 transition-colors hover:text-ink-900"
           >
             ← 回首頁
           </Link>
@@ -42,7 +42,7 @@ export default function SelectPage() {
         </div>
 
         <p
-          className="mt-10 text-center text-sm font-medium text-ink-400 animate-fade-in"
+          className="mt-10 text-center text-base font-medium text-ink-600 animate-fade-in"
           style={{ animationDelay: '900ms' }}
         >
           不同的路線 · 不同的生活樣子 · 最後自然遇見適合的房子

@@ -99,7 +99,7 @@ export default function HomePage() {
         </Link>
 
         <div
-          className="mt-8 text-sm text-ink-400 animate-fade-in"
+          className="mt-8 text-sm font-medium text-ink-600 animate-fade-in sm:text-base"
           style={{ animationDelay: '750ms' }}
         >
           每條路線約 5 分鐘閱讀 · 8 條路線 · 12 間房源

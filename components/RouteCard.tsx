@@ -79,7 +79,7 @@ export default function RouteCard({
         </div>
         <div className="min-w-0 flex-1">
           <div
-            className={`flex items-center gap-1.5 text-xs font-semibold ${a.text}`}
+            className={`flex items-center gap-1.5 text-sm font-semibold ${a.text}`}
           >
             <span className={`inline-block h-2 w-2 rounded-full ${a.dot}`} />
             今天的路線
@@ -87,10 +87,10 @@ export default function RouteCard({
           <h3 className="font-kai mt-1 text-xl font-bold leading-tight text-ink-900 sm:text-2xl">
             {title}
           </h3>
-          <p className="mt-0.5 text-sm text-ink-600 sm:text-base">{subtitle}</p>
-          <div className="mt-2 flex items-center gap-3 text-xs font-medium text-ink-400 sm:text-sm">
+          <p className="mt-1 text-sm text-ink-700 sm:text-base">{subtitle}</p>
+          <div className="mt-2 flex items-center gap-3 text-sm font-medium text-ink-600">
             <span className="inline-flex items-center gap-1">
-              <ClockIcon className="h-3.5 w-3.5" />
+              <ClockIcon className="h-4 w-4" />
               {formatMin(totalMin)}
             </span>
             <span>{stationCount} 站</span>

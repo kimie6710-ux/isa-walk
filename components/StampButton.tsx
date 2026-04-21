@@ -23,11 +23,11 @@ export default function StampButton({ collected, onClick, accent }: Props) {
       onClick={onClick}
       aria-label={collected ? '已蓋章' : '蓋章'}
       aria-pressed={collected}
-      className={`group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full px-3 py-1.5 text-xs font-semibold shadow-soft ring-2 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${
+      className={`group relative inline-flex min-h-[44px] items-center gap-2 overflow-hidden rounded-full px-4 py-2.5 text-sm font-semibold shadow-soft ring-2 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${
         collected ? `${a.on} ring-transparent stamp-pop` : `${a.off}`
       }`}
     >
-      <PawPrint className={`h-3.5 w-3.5 ${collected ? '' : 'opacity-60'}`} />
+      <PawPrint className={`h-4 w-4 ${collected ? '' : 'opacity-60'}`} />
       {collected ? '已蓋章' : '我到這裡了'}
     </button>
   );

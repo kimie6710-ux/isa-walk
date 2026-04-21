@@ -120,25 +120,25 @@ function RouteContent() {
         </div>
 
         {/* 路線總覽 + スタンプ進捗 */}
-        <div className="mt-6 rounded-2xl bg-white/85 p-4 shadow-soft animate-fade-in">
-          <div className="flex items-center justify-between text-sm font-semibold text-ink-700">
-            <span className="flex items-center gap-1.5">
-              <ClockIcon className="h-4 w-4" />
+        <div className="mt-6 rounded-2xl bg-white/85 p-5 shadow-soft animate-fade-in">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-base font-semibold text-ink-700">
+            <span className="flex items-center gap-2">
+              <ClockIcon className="h-5 w-5" />
               全程約 {formatMin(total)} · {stationCount} 站
             </span>
-            <span className="flex items-center gap-1 text-isa-600">
-              <PawPrint className="h-4 w-4" />
+            <span className="flex items-center gap-1.5 text-isa-600">
+              <PawPrint className="h-5 w-5" />
               {mounted ? `${collectedCount}/${stationCount}` : `0/${stationCount}`}
             </span>
           </div>
-          <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-cream-100">
+          <div className="mt-4 h-3 overflow-hidden rounded-full bg-cream-100">
             <div
               className={`h-full rounded-full ${progressColor} transition-all duration-500`}
               style={{ width: `${pct}%` }}
             />
           </div>
           {mounted && collectedCount > 0 && !completed && (
-            <div className="mt-2 text-xs font-medium text-ink-600">
+            <div className="mt-3 text-sm font-medium text-ink-700">
               還差 {stationCount - collectedCount} 站就集滿今日腳印～
             </div>
           )}
@@ -157,11 +157,11 @@ function RouteContent() {
         </div>
 
         <div className="mt-10">
-          <div className="mb-4 flex items-baseline justify-between">
-            <h2 className="font-kai text-xl font-bold text-ink-900 sm:text-2xl">
+          <div className="mb-5 flex flex-col gap-1">
+            <h2 className="font-kai text-2xl font-bold text-ink-900 sm:text-3xl">
               沿途這些地方
             </h2>
-            <span className="text-sm font-medium text-ink-600">
+            <span className="text-sm font-medium text-ink-600 sm:text-base">
               點圓點或蓋章 → 收集腳印
             </span>
           </div>
@@ -279,8 +279,8 @@ function RouteContent() {
               關於伊薩
             </Link>
           </div>
-          <div className="mt-3 text-center text-xs text-ink-600 sm:hidden">
-            提示：左右滑動可以切換路線
+          <div className="mt-4 text-center text-sm font-medium text-ink-600 sm:hidden">
+            ← 左右滑動可以切換路線 →
           </div>
         </div>
       </div>
